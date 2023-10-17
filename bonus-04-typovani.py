@@ -1,8 +1,9 @@
 """
 Typování
 """
-def over_cislo(cislo: str) -> bool:
-    cislo = cislo.replace(" ", "")
+def over_cislo(cislo: str, ignoreSpaces: bool = False) -> bool:
+    if ignoreSpaces == True:
+        cislo = cislo.replace(" ", "")
     c = len(cislo)
     if c == 9:
         return True
@@ -21,7 +22,7 @@ def cena_zpravy(text: str) -> int:
     return cena
 
 cislo = input("Zadej telefonní číslo: ")
-if over_cislo(cislo) == False:
+if over_cislo(cislo, True) == False:
     print("Telefonní číslo má chybný formát.")
 else:
     text = input("Zadej text: ")
