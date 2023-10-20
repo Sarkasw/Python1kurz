@@ -10,6 +10,9 @@ teploty = [
     ["sobota", 1.0, 3.2, 2.1, -2.0],
     ["neděle", 0.4, 2.7, 1.3, -2.8]
 ]
-
+"""
 denni_prumer = {den: round((rano + poledne + vecer + noc)/4, 2) for den, rano, poledne, vecer, noc in teploty}
 print(denni_prumer)
+"""
+prum_teplota = {data[0]: round(sum(data[1:])/(len(data) - 1), 2) for data in teploty}
+print(prum_teplota)
